@@ -1,12 +1,14 @@
 import "./stylesheets/minimum.css";
 import "./stylesheets/style.css";
+import htmlMixin from "./javascript/htmlMixin";
 
 (() => {
-    const menuWindow = document.createElement("nav");
-    menuWindow.classList.add("menu-window");
-    menuWindow.classList.add("hidden");
+    const menuWindow = htmlMixin.createElement("nav", [
+        "menu-window",
+        "hidden",
+    ]);
 
-    const menuButton = document.createElement("button");
+    const menuButton = htmlMixin.createElement("button");
     menuButton.textContent = "Menu";
     menuButton.addEventListener("touchstart", () => {
         menuWindow.classList.add("visible");
