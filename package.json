@@ -9,7 +9,8 @@
     "build:stats": "webpack build --config ./webpack.production.config.js --stats verbose",
     "serve": "webpack serve --config ./webpack.development.config.js",
     "serve:open": "webpack serve --config ./webpack.development.config.js --open",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "update:packages": "npm-check-updates --interactive --format group"
   },
   "author": "",
   "license": "ISC",
@@ -18,6 +19,7 @@
     "eslint": "^8.53.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^9.0.0",
+    "npm-check-updates": "^16.14.11",
     "prettier": "3.0.3",
     "style-loader": "^3.3.3",
     "webpack": "^5.89.0",
