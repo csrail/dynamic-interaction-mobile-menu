@@ -1,5 +1,7 @@
-const dataObject = {
-    property: "value"
-}
+const menuContainerData = {
+    elementType: "nav",
+    classes: ["menu-window", "hidden"],
+    // classes: ["menu-window"],
+};
 
-export default dataObject;
+export default menuContainerData;

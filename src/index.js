@@ -1,17 +1,17 @@
 import "./stylesheets/minimum.css";
 import "./stylesheets/style.css";
 import htmlMixin from "./javascript/htmlMixin";
+import MobileMenuContainer from "./javascript/mobileMenuModel";
+import menuContainerData from "./data/data";
 
 (() => {
-    const menuWindow = htmlMixin.createElement("nav", [
-        "menu-window",
-        "hidden",
-    ]);
+    let mobileMenuContainer = new MobileMenuContainer(menuContainerData);
+    mobileMenuContainer = mobileMenuContainer.buildContainer();
 
     const menuButton = htmlMixin.createElement("button");
     menuButton.textContent = "Menu";
     menuButton.addEventListener("touchstart", () => {
-        menuWindow.classList.add("visible");
+        mobileMenuContainer.classList.add("visible");
     });
 
     const sequence = ["My Profile", "Messages", "Saved Posts", "Settings"];
@@ -19,7 +19,7 @@ import htmlMixin from "./javascript/htmlMixin";
     function createMenuElement(title) {
         const menuElement = document.createElement("div");
         menuElement.textContent = title;
-        menuWindow.appendChild(menuElement);
+        mobileMenuContainer.appendChild(menuElement);
         return menuElement;
     }
 
@@ -27,8 +27,8 @@ import htmlMixin from "./javascript/htmlMixin";
         return createMenuElement(title);
     }
 
-    menuWindow.appendChild(buildMenuElement("My Profile"));
-    document.body.appendChild(menuWindow);
+    mobileMenuContainer.appendChild(buildMenuElement("My Profile"));
+    document.body.appendChild(mobileMenuContainer);
     document.body.appendChild(menuButton);
 
     return {};
