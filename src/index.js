@@ -1,17 +1,19 @@
 import "./stylesheets/minimum.css";
 import "./stylesheets/style.css";
 import htmlMixin from "./javascript/htmlMixin";
-import MobileMenuContainer from "./javascript/mobileMenuModel";
 import menuContainerData from "./data/data";
+import MobileMenuContainer from "./javascript/mobileMenuModel";
+import MobileMenuView from "./javascript/mobileMenuView";
 
 (() => {
-    let mobileMenuContainer = new MobileMenuContainer(menuContainerData);
-    mobileMenuContainer = mobileMenuContainer.buildContainer();
+    const mobileMenuContainer = new MobileMenuContainer(menuContainerData);
+    const mobileMenuView = new MobileMenuView(mobileMenuContainer);
+    const mobileMenuElement = mobileMenuView.buildContainer();
 
     const menuButton = htmlMixin.createElement("button");
     menuButton.textContent = "Menu";
     menuButton.addEventListener("touchstart", () => {
-        mobileMenuContainer.classList.add("visible");
+        mobileMenuElement.classList.add("visible");
     });
 
     const sequence = ["My Profile", "Messages", "Saved Posts", "Settings"];
@@ -19,7 +21,7 @@ import menuContainerData from "./data/data";
     function createMenuElement(title) {
         const menuElement = document.createElement("div");
         menuElement.textContent = title;
-        mobileMenuContainer.appendChild(menuElement);
+        mobileMenuElement.appendChild(menuElement);
         return menuElement;
     }
 
@@ -27,8 +29,8 @@ import menuContainerData from "./data/data";
         return createMenuElement(title);
     }
 
-    mobileMenuContainer.appendChild(buildMenuElement("My Profile"));
-    document.body.appendChild(mobileMenuContainer);
+    mobileMenuElement.appendChild(buildMenuElement("My Profile"));
+    document.body.appendChild(mobileMenuElement);
     document.body.appendChild(menuButton);
 
     return {};
