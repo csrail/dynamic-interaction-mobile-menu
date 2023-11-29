@@ -6,6 +6,7 @@ import MobileMenuContainer from "./javascript/models/mobileMenuContainer";
 import MobileMenuItem from "./javascript/models/mobileMenuItem";
 import MobileMenuContainerView from "./javascript/views/mobileMenuContainerView";
 import MobileMenuItemView from "./javascript/views/mobileMenuItemView";
+import ViewInterface from "./javascript/viewInterface";
 
 (() => {
     // knowledge exists here about
@@ -16,8 +17,8 @@ import MobileMenuItemView from "./javascript/views/mobileMenuItemView";
     const mobileMenuContainerView = new MobileMenuContainerView(
         mobileMenuContainer,
     );
-    const mobileMenuContainerElement = mobileMenuContainerView.displayView();
     const mobileMenuItemView = new MobileMenuItemView(mobileMenuItem);
+    const mobileMenuContainerElement = mobileMenuContainerView.displayView();
     const mobileMenuItemElement = mobileMenuItemView.displayView();
 
     // knowledge exists here about
