@@ -1,4 +1,5 @@
-import { MobileMenuContainer, MobileMenuItem } from "./mobileMenuModel";
+import MobileMenuContainer from "./models/mobileMenuContainer";
+import MobileMenuItem from "./models/mobileMenuItem";
 import htmlMixin from "./htmlMixin";
 
 class MobileMenuView {

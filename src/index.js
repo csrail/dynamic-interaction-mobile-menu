@@ -2,10 +2,8 @@ import "./stylesheets/minimum.css";
 import "./stylesheets/style.css";
 import htmlMixin from "./javascript/htmlMixin";
 import { menuContainerData, menuItemData1 } from "./data/data";
-import {
-    MobileMenuContainer,
-    MobileMenuItem,
-} from "./javascript/mobileMenuModel";
+import MobileMenuContainer from "./javascript/models/mobileMenuContainer";
+import MobileMenuItem from "./javascript/models/mobileMenuItem";
 import MobileMenuView from "./javascript/mobileMenuView";
 
 (() => {
