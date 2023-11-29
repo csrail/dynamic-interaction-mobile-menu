@@ -8,29 +8,29 @@ import MobileMenuView from "./javascript/mobileMenuView";
 (() => {
     const mobileMenuContainer = new MobileMenuContainer(menuContainerData);
     const mobileMenuView = new MobileMenuView(mobileMenuContainer);
-    const mobileMenuElement = mobileMenuView.buildContainer();
+    const mobileMenuContainerElement = mobileMenuView.buildContainer();
 
     const menuButton = htmlMixin.createElement("button");
     menuButton.textContent = "Menu";
     menuButton.addEventListener("touchstart", () => {
-        mobileMenuElement.classList.add("visible");
+        mobileMenuContainerElement.classList.add("visible");
     });
 
     const sequence = ["My Profile", "Messages", "Saved Posts", "Settings"];
 
-    function createMenuElement(title) {
-        const menuElement = document.createElement("div");
-        menuElement.textContent = title;
-        mobileMenuElement.appendChild(menuElement);
-        return menuElement;
+    function createMenuItemElement(title) {
+        const component = document.createElement("div");
+        component.textContent = title;
+        mobileMenuContainerElement.appendChild(component);
+        return component;
     }
 
-    function buildMenuElement(title) {
-        return createMenuElement(title);
+    function buildMenuItemElement(title) {
+        return createMenuItemElement(title);
     }
 
-    mobileMenuElement.appendChild(buildMenuElement("My Profile"));
-    document.body.appendChild(mobileMenuElement);
+    mobileMenuContainerElement.appendChild(buildMenuItemElement("My Profile"));
+    document.body.appendChild(mobileMenuContainerElement);
     document.body.appendChild(menuButton);
 
     return {};
