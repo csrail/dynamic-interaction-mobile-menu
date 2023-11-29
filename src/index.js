@@ -4,7 +4,8 @@ import htmlMixin from "./javascript/htmlMixin";
 import { menuContainerData, menuItemData1 } from "./data/data";
 import MobileMenuContainer from "./javascript/models/mobileMenuContainer";
 import MobileMenuItem from "./javascript/models/mobileMenuItem";
-import MobileMenuView from "./javascript/mobileMenuView";
+import MobileMenuContainerView from "./javascript/views/mobileMenuContainerView";
+import MobileMenuItemView from "./javascript/views/mobileMenuItemView";
 
 (() => {
     // knowledge exists here about
@@ -12,12 +13,12 @@ import MobileMenuView from "./javascript/mobileMenuView";
     // dependency injection
     const mobileMenuContainer = new MobileMenuContainer(menuContainerData);
     const mobileMenuItem = new MobileMenuItem(menuItemData1);
-    const mobileMenuView = new MobileMenuView(
+    const mobileMenuContainerView = new MobileMenuContainerView(
         mobileMenuContainer,
-        mobileMenuItem,
     );
-    const mobileMenuContainerElement = mobileMenuView.buildContainer();
-    const mobileMenuItemElement = mobileMenuView.buildItem();
+    const mobileMenuContainerElement = mobileMenuContainerView.displayView();
+    const mobileMenuItemView = new MobileMenuItemView(mobileMenuItem);
+    const mobileMenuItemElement = mobileMenuItemView.displayView();
 
     // knowledge exists here about
     // DOM element creation
