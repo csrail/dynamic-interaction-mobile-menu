@@ -4,4 +4,12 @@ const menuContainerData = {
     // classes: ["menu-window"],
 };
 
-export default menuContainerData;
+const menuItemData1 = {
+    elementType: "div",
+    classes: ["menu-item"],
+    title: "Settings",
+};
+
+// const sequence = ["My Profile", "Messages", "Saved Posts", "Settings"];
+
+export { menuContainerData, menuItemData1 };
