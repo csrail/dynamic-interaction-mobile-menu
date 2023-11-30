@@ -1,25 +1,18 @@
 import "./stylesheets/minimum.css";
 import "./stylesheets/style.css";
 import htmlMixin from "./javascript/htmlMixin";
-import { menuContainerData, menuItemData1 } from "./data/data";
-import MobileMenuContainer from "./javascript/models/mobileMenuContainer";
-import MobileMenuItem from "./javascript/models/mobileMenuItem";
-import MobileMenuContainerView from "./javascript/views/mobileMenuContainerView";
-import MobileMenuItemView from "./javascript/views/mobileMenuItemView";
-import ViewInterface from "./javascript/viewInterface";
+import { menuContainerData, menuItemData1, menuItemData2 } from "./data/data";
+import MobileMenuController from "./javascript/controllers/mobileMenuController";
 
 (() => {
     // knowledge exists here about
     // co-ordination of parts
     // dependency injection
-    const mobileMenuContainer = new MobileMenuContainer(menuContainerData);
-    const mobileMenuItem = new MobileMenuItem(menuItemData1);
-    const mobileMenuContainerView = new MobileMenuContainerView(
-        mobileMenuContainer,
+    const mobileMenuController = new MobileMenuController(
+        menuContainerData,
+        menuItemData1,
+        menuItemData2,
     );
-    const mobileMenuItemView = new MobileMenuItemView(mobileMenuItem);
-    const mobileMenuContainerElement = mobileMenuContainerView.displayView();
-    const mobileMenuItemElement = mobileMenuItemView.displayView();
 
     // knowledge exists here about
     // DOM element creation
@@ -27,12 +20,13 @@ import ViewInterface from "./javascript/viewInterface";
     const menuButton = htmlMixin.createElement("button");
     menuButton.textContent = "Menu";
     menuButton.addEventListener("touchstart", () => {
-        mobileMenuContainerElement.classList.add("visible");
+        document.querySelector(".menu-window").classList.add("visible");
     });
 
     // knowledge exists here about the layout
-    mobileMenuContainerElement.appendChild(mobileMenuItemElement);
-    document.body.appendChild(mobileMenuContainerElement);
+    // mobileMenuContainerElement.appendChild(mobileMenuItemElement);
+    // document.body.appendChild(mobileMenuContainerElement);
+    mobileMenuController.displayView(document.body);
     document.body.appendChild(menuButton);
 
     return {};

@@ -17,7 +17,7 @@ class MobileMenuItemView {
         return component;
     }
 
-    displayView() {
+    getView() {
         return this.#buildItem();
     }
 }

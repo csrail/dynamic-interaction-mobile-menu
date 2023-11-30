@@ -13,7 +13,7 @@ class MobileMenuContainerView {
         );
     }
 
-    displayView() {
+    getView() {
         return this.#buildContainer();
     }
 }
