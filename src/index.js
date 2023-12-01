@@ -17,6 +17,7 @@ import MobileMenuController from "./javascript/controllers/mobileMenuController"
     // knowledge exists here about
     // DOM element creation
     // event handling
+    // relationship between DOM and a view
     const menuButton = htmlMixin.createElement("button");
     menuButton.textContent = "Menu";
     menuButton.addEventListener("touchstart", () => {
