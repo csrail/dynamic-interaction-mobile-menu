@@ -25,8 +25,6 @@ import MobileMenuController from "./javascript/controllers/mobileMenuController"
     });
 
     // knowledge exists here about the layout
-    // mobileMenuContainerElement.appendChild(mobileMenuItemElement);
-    // document.body.appendChild(mobileMenuContainerElement);
     mobileMenuController.displayView(document.body);
     document.body.appendChild(menuButton);
 
