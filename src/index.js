@@ -1,8 +1,15 @@
 import "./stylesheets/minimum.css";
 import "./stylesheets/style.css";
-import htmlMixin from "./javascript/htmlMixin";
-import { menuContainerData, menuItemData1, menuItemData2 } from "./data/data";
+import {
+    menuButtonData,
+    menuContainerData,
+    menuItemData1,
+    menuItemData2,
+} from "./data/data";
 import MobileMenuController from "./javascript/controllers/mobileMenuController";
+import MobileMenuButton from "./javascript/models/mobileMenuButton";
+import MobileMenuButtonView from "./javascript/views/mobileMenuButtonView";
+import MobileMenuButtonController from "./javascript/controllers/mobileMenuButtonController";
 
 (() => {
     // knowledge exists here about
@@ -18,15 +25,13 @@ import MobileMenuController from "./javascript/controllers/mobileMenuController"
     // DOM element creation
     // event handling
     // relationship between DOM and a view
-    const menuButton = htmlMixin.createElement("button");
-    menuButton.textContent = "Menu";
-    menuButton.addEventListener("touchstart", () => {
-        document.querySelector(".menu-window").classList.add("visible");
-    });
+    const menuButtonController = new MobileMenuButtonController(
+        new MobileMenuButtonView(new MobileMenuButton(menuButtonData)),
+    );
 
     // knowledge exists here about the layout
     mobileMenuController.displayView(document.body);
-    document.body.appendChild(menuButton);
+    document.body.appendChild(menuButtonController.getView());
 
     return {};
 })();

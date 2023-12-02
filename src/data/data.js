@@ -1,3 +1,10 @@
+const menuButtonData = {
+    elementType: "button",
+    id: "the-button",
+    classes: ["menu-button"],
+    title: "Menu",
+};
+
 const menuContainerData = {
     elementType: "nav",
     classes: ["menu-window", "hidden"],
@@ -18,4 +25,4 @@ const menuItemData2 = {
 
 // const sequence = ["My Profile", "Messages", "Saved Posts", "Settings"];
 
-export { menuContainerData, menuItemData1, menuItemData2 };
+export { menuButtonData, menuContainerData, menuItemData1, menuItemData2 };
