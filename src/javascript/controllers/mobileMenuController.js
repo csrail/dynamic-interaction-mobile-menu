@@ -1,12 +1,16 @@
 import MobileMenuContainer from "../models/mobileMenuContainer";
 import MobileMenuItems from "../models/mobileMenuItems";
 import MobileMenuContainerView from "../views/mobileMenuContainerView";
-import MobileMenuItemView from "../views/mobileMenuItemView";
+import MobileMenuItemViews from "../views/mobileMenuItemViews";
 
 class MobileMenuController {
     #containerObject;
 
     #itemObjects = [];
+
+    #containerView;
+
+    #itemViews;
 
     constructor(
         containerObject = new MobileMenuContainer(),
@@ -14,14 +18,16 @@ class MobileMenuController {
     ) {
         this.#containerObject = containerObject;
         this.#itemObjects = itemObjects.getObjects();
+        this.#containerView = new MobileMenuContainerView(
+            this.#containerObject,
+        );
+        this.#itemViews = new MobileMenuItemViews(this.#itemObjects);
     }
 
-    static #buildView(container, items) {
-        const containerView = new MobileMenuContainerView(container);
+    static #buildView(containerView, itemViews) {
         const component = containerView.getView();
 
-        items.forEach((item) => {
-            const itemView = new MobileMenuItemView(item);
+        itemViews.getItemViews().forEach((itemView) => {
             component.appendChild(itemView.getView());
         });
 
@@ -30,12 +36,9 @@ class MobileMenuController {
 
     displayView(node) {
         node.appendChild(
-            // this.#buildView(this.#containerObject, this.#itemObjects),
-            // note the above doesn't work, since the method is called on an instance
-            // rather than being called at the class
             MobileMenuController.#buildView(
-                this.#containerObject,
-                this.#itemObjects,
+                this.#containerView,
+                this.#itemViews,
             ),
         );
     }
