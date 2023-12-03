@@ -14,23 +14,15 @@ import MobileMenuButtonController from "./javascript/controllers/mobileMenuButto
 import MobileMenuItems from "./javascript/models/mobileMenuItems";
 
 (() => {
-    // knowledge exists here about
-    // co-ordination of parts
-    // dependency injection
     const mobileMenuController = new MobileMenuController(
         new MobileMenuContainer(menuContainerData),
         new MobileMenuItems(menuItemData1, menuItemData2),
     );
 
-    // knowledge exists here about
-    // DOM element creation
-    // event handling
-    // relationship between DOM and a view
     const menuButtonController = new MobileMenuButtonController(
         new MobileMenuButtonView(new MobileMenuButton(menuButtonData)),
     );
 
-    // knowledge exists here about the layout
     mobileMenuController.displayView(document.body);
     document.body.appendChild(menuButtonController.getView());
 
