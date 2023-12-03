@@ -1,5 +1,5 @@
 import MobileMenuContainer from "../models/mobileMenuContainer";
-import MobileMenuItem from "../models/mobileMenuItem";
+import MobileMenuItems from "../models/mobileMenuItems";
 import MobileMenuContainerView from "../views/mobileMenuContainerView";
 import MobileMenuItemView from "../views/mobileMenuItemView";
 
@@ -8,15 +8,12 @@ class MobileMenuController {
 
     #itemObjects = [];
 
-    constructor(containerObject = new MobileMenuContainer(), ...itemData) {
+    constructor(
+        containerObject = new MobileMenuContainer(),
+        itemObjects = new MobileMenuItems(),
+    ) {
         this.#containerObject = containerObject;
-        this.#constructMenuItems(itemData);
-    }
-
-    #constructMenuItems(itemData) {
-        itemData.forEach((item) => {
-            this.#itemObjects.push(new MobileMenuItem(item));
-        });
+        this.#itemObjects = itemObjects.getObjects();
     }
 
     static #buildView(container, items) {

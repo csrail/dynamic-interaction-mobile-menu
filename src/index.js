@@ -11,6 +11,7 @@ import MobileMenuContainer from "./javascript/models/mobileMenuContainer";
 import MobileMenuButton from "./javascript/models/mobileMenuButton";
 import MobileMenuButtonView from "./javascript/views/mobileMenuButtonView";
 import MobileMenuButtonController from "./javascript/controllers/mobileMenuButtonController";
+import MobileMenuItems from "./javascript/models/mobileMenuItems";
 
 (() => {
     // knowledge exists here about
@@ -18,8 +19,7 @@ import MobileMenuButtonController from "./javascript/controllers/mobileMenuButto
     // dependency injection
     const mobileMenuController = new MobileMenuController(
         new MobileMenuContainer(menuContainerData),
-        menuItemData1,
-        menuItemData2,
+        new MobileMenuItems(menuItemData1, menuItemData2),
     );
 
     // knowledge exists here about
