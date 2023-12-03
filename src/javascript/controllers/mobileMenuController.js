@@ -8,8 +8,8 @@ class MobileMenuController {
 
     #itemObjects = [];
 
-    constructor(containerData, ...itemData) {
-        this.#containerObject = new MobileMenuContainer(containerData);
+    constructor(containerObject = new MobileMenuContainer(), ...itemData) {
+        this.#containerObject = containerObject;
         this.#constructMenuItems(itemData);
     }
 

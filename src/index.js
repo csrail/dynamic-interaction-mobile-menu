@@ -7,6 +7,7 @@ import {
     menuItemData2,
 } from "./data/data";
 import MobileMenuController from "./javascript/controllers/mobileMenuController";
+import MobileMenuContainer from "./javascript/models/mobileMenuContainer";
 import MobileMenuButton from "./javascript/models/mobileMenuButton";
 import MobileMenuButtonView from "./javascript/views/mobileMenuButtonView";
 import MobileMenuButtonController from "./javascript/controllers/mobileMenuButtonController";
@@ -16,7 +17,7 @@ import MobileMenuButtonController from "./javascript/controllers/mobileMenuButto
     // co-ordination of parts
     // dependency injection
     const mobileMenuController = new MobileMenuController(
-        menuContainerData,
+        new MobileMenuContainer(menuContainerData),
         menuItemData1,
         menuItemData2,
     );
