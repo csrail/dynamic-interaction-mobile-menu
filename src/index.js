@@ -5,6 +5,8 @@ import {
     menuContainerData,
     menuItemData1,
     menuItemData2,
+    menuItemData3,
+    menuItemData4,
 } from "./data/data";
 import MobileMenuController from "./javascript/controllers/mobileMenuController";
 import MobileMenuContainer from "./javascript/models/mobileMenuContainer";
@@ -21,7 +23,12 @@ import MobileMenuApplicationController from "./javascript/controllers/mobileMenu
         ),
         new MobileMenuController(
             new MobileMenuContainer(menuContainerData),
-            new MobileMenuItems(menuItemData1, menuItemData2),
+            new MobileMenuItems(
+                menuItemData1,
+                menuItemData2,
+                menuItemData3,
+                menuItemData4,
+            ),
         ),
     );
 

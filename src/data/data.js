@@ -20,9 +20,26 @@ const menuItemData1 = {
 const menuItemData2 = {
     elementType: "div",
     classes: ["menu-item"],
+    title: "Messages",
+};
+
+const menuItemData3 = {
+    elementType: "div",
+    classes: ["menu-item"],
+    title: "Saved Posts",
+};
+
+const menuItemData4 = {
+    elementType: "div",
+    classes: ["menu-item"],
     title: "Settings",
 };
 
-// const sequence = ["My Profile", "Messages", "Saved Posts", "Settings"];
-
-export { menuButtonData, menuContainerData, menuItemData1, menuItemData2 };
+export {
+    menuButtonData,
+    menuContainerData,
+    menuItemData1,
+    menuItemData2,
+    menuItemData3,
+    menuItemData4,
+};
