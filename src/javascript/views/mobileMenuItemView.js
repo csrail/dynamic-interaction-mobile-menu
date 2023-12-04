@@ -12,7 +12,12 @@ class MobileMenuItemView {
             this.menuItem.classes,
         );
 
-        component.textContent = this.menuItem.title;
+        const link = htmlMixin.createHyperlink(
+            this.menuItem.title,
+            this.menuItem.hyperlink,
+        );
+
+        component.appendChild(link);
 
         return component;
     }

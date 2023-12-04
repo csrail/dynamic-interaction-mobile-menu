@@ -15,24 +15,29 @@ const menuItemData1 = {
     elementType: "div",
     classes: ["menu-item"],
     title: "My Profile",
+    hyperlink: "/profile",
 };
 
 const menuItemData2 = {
     elementType: "div",
     classes: ["menu-item"],
     title: "Messages",
+    hyperlink: "/messages",
 };
 
 const menuItemData3 = {
     elementType: "div",
     classes: ["menu-item"],
     title: "Saved Posts",
+    hyperlink: "/saved_posts",
+    hyperlinkClasses: ["hyperlink"],
 };
 
 const menuItemData4 = {
     elementType: "div",
     classes: ["menu-item"],
     title: "Settings",
+    hyperlink: "/settings",
 };
 
 export {
