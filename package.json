@@ -1,8 +1,7 @@
 {
-  "name": "dynamic-interactions",
+  "name": "@npm-csrail/mobile-menu",
   "version": "1.0.0",
-  "description": "basic javascript components",
-  "private": true,
+  "description": "basic javascript mobile menu",
   "main": "src/index.js",
   "scripts": {
     "build": "webpack build --config ./webpack.production.config.js",
