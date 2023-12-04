@@ -34,12 +34,10 @@ class MobileMenuController {
         return component;
     }
 
-    displayView(node) {
-        node.appendChild(
-            MobileMenuController.#buildView(
-                this.#containerView,
-                this.#itemViews,
-            ),
+    getView() {
+        return MobileMenuController.#buildView(
+            this.#containerView,
+            this.#itemViews,
         );
     }
 }
