@@ -8,6 +8,10 @@ button {
     position: fixed;
 }
 
+.menu-item > a {
+    display: flex;
+}
+
 .hidden {
     display: none;
 }
