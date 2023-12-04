@@ -15,21 +15,21 @@ const menuItemData1 = {
     elementType: "div",
     classes: ["menu-item"],
     title: "My Profile",
-    hyperlink: "/profile",
+    hyperlink: "/#profile",
 };
 
 const menuItemData2 = {
     elementType: "div",
     classes: ["menu-item"],
     title: "Messages",
-    hyperlink: "/messages",
+    hyperlink: "/#messages",
 };
 
 const menuItemData3 = {
     elementType: "div",
     classes: ["menu-item"],
     title: "Saved Posts",
-    hyperlink: "/saved_posts",
+    hyperlink: "/#saved_posts",
     hyperlinkClasses: ["hyperlink"],
 };
 
@@ -37,7 +37,7 @@ const menuItemData4 = {
     elementType: "div",
     classes: ["menu-item"],
     title: "Settings",
-    hyperlink: "/settings",
+    hyperlink: "/#settings",
 };
 
 export {
