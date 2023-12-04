@@ -10,6 +10,8 @@ button {
 
 .menu-item > a {
     display: flex;
+    background-color: navajowhite;
+    padding: 1em;
 }
 
 .hidden {

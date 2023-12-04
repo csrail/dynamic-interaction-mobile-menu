@@ -15,7 +15,7 @@ class MobileMenuApplicationController {
     }
 
     static #handleMenuClosing() {
-        window.addEventListener("mousedown", (event) => {
+        window.addEventListener("click", (event) => {
             if (!(event.target === document.querySelector(".menu-button"))) {
                 document
                     .querySelector(".menu-window")
