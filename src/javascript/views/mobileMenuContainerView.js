@@ -2,6 +2,8 @@ import MobileMenuContainer from "../models/mobileMenuContainer";
 import htmlMixin from "../htmlMixin";
 
 class MobileMenuContainerView {
+    #containerView;
+
     constructor(mobileMenuContainer = new MobileMenuContainer()) {
         this.menuContainer = mobileMenuContainer;
     }
@@ -14,7 +16,10 @@ class MobileMenuContainerView {
     }
 
     getView() {
-        return this.#buildContainer();
+        if (this.#containerView === undefined) {
+            this.#containerView = this.#buildContainer();
+        }
+        return this.#containerView;
     }
 }
 
