@@ -20,7 +20,7 @@ class MobileMenuButtonView {
     }
 
     static #makeResponsive(component) {
-        component.addEventListener("touchstart", () => {
+        component.addEventListener("mousedown", () => {
             document.querySelector(".menu-window").classList.add("visible");
         });
     }
